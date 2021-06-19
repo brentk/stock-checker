@@ -3,6 +3,7 @@ using AngleSharp;
 using System.Linq;
 using StockChecker.Library;
 using StockChecker.Models;
+using System;
 
 namespace StockChecker.Services {
     public class DirectToolsOutlet : IStockChecker {
@@ -25,11 +26,14 @@ namespace StockChecker.Services {
                 if (oosButtons.Count == 0) {
 
                     string subject = item.Name;
-                    string body = $"{item.Name} appears to be in stock\n\n${item.Url}";
+                    string body = $"{item.Name} appears to be in stock\n\n{item.Url}";
 
+                    Console.WriteLine(body);
                     foreach(string email in _config.Emails) {
                         _mailer.Send(email, subject, body);
                     }
+                } else {
+                    Console.WriteLine($"{DateTime.Now}: {item.Name} is not in stock.");
                 }
             }
         }
