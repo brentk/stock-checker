@@ -1,0 +1,25 @@
+{
+    "items": [
+        {
+            "type": "TacoStore",
+            "name": "Delicious Taco",
+            "url": "https://www.tacostore.com/DeliciousTaco"
+        },
+        {
+            "type": "BeerStore",
+            "name": "Delicious Beer",
+            "url": "https://www.beerstore.com/DeliciousBeer"
+        }
+    ],
+    "smtp": {
+        "server": "smtp.myemail.com",
+        "username": "my_username",
+        "password": "MyP@55w0Rd!",
+        "useSsl": true,
+        "port": 587,
+        "from": "my@fromaddress.com"
+    },
+    "emailsToNotify": [
+        "hello@internet.com"
+    ]
+}
