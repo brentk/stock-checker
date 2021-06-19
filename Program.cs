@@ -7,8 +7,10 @@ namespace StockChecker
     class Program
     {
         static void Main(string[] args) {
-            IStockChecker directToolsOutlet = Container.Instance().Resolve<IStockChecker>("DirectToolsOutlet");
-            directToolsOutlet.Run();
+            var stockCheckers  = Container.Instance().ResolveAll<IStockChecker>();
+            foreach (IStockChecker checker in stockCheckers) {
+                checker.Run();
+            }
         }
     }
 }
