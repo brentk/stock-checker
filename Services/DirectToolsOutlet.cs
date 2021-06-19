@@ -18,7 +18,7 @@ namespace StockChecker.Services {
 
         public void Run() {
 
-            foreach (var item in _config.Items) {
+            foreach (var item in _config.Items.Where(i => i.Type == "DirectToolOutlet")) {
                 var config = Configuration.Default.WithDefaultLoader();
                 var document = BrowsingContext.New(config).OpenAsync(item.Url).GetAwaiter().GetResult();
                 var oosButtons = document.QuerySelectorAll(".outOfStock").ToList();
