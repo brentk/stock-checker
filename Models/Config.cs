@@ -23,6 +23,8 @@ namespace StockChecker.Models {
         public bool UseSsl {get; set;}
         [JsonPropertyName("port")]
         public int Port {get; set;}
+        [JsonPropertyName("from")]
+        public string From {get; set;}
     }
 
     public class Config {

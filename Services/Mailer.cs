@@ -22,7 +22,7 @@ namespace StockChecker.Services {
                 EnableSsl = _config.Smtp.UseSsl,
             };
 
-            smtpClient.Send(_config.Smtp.Username, to, subject, body);
+            smtpClient.Send(_config.Smtp.From, to, subject, body);
         }
     }
 }
