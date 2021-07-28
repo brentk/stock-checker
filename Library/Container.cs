@@ -9,6 +9,7 @@ namespace StockChecker.Library {
             if (_container == null) {
                 _container = new UnityContainer();
                 _container.RegisterType<IStockChecker, DirectToolsOutlet>("DirectToolsOutlet");
+                _container.RegisterType<IStockChecker, BestBuy>("BestBuy");
                 _container.RegisterType<IConfig, JsonConfig>();
                 _container.RegisterType<IMailer, Mailer>();
             }
