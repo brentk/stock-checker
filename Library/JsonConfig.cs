@@ -11,6 +11,10 @@ namespace StockChecker.Library {
 
         public JsonConfig() {
 
+            if (!File.Exists("./settings.json")) {
+                throw new System.Exception("Unable to find settings file \"settings.json\"");
+            }
+
             using (FileStream fs = File.OpenRead("./settings.json"))
             {
                 using (StreamReader sr = new StreamReader(fs)) {
